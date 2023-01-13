@@ -11,23 +11,48 @@ function playRound(playerSelection, computerSelection){
         return "Tie"
     } else if (playerSelection === "Rock" && computerSelection === "Paper") {
         return "You Lose"
+        computerScore++;
     } else if (playerSelection === "Rock" && computerSelection === "Scissor") {
         return "You Won"
+        playerScore++;
     } else if (playerSelection === "Paper" && computerSelection === "Rock"){
         return "You Won"
+        playerScore++;
     } else if (playerSelection === "Paper" && computerSelection === "Scissor") {
         return "You Lose"
+        computerScore++;
     } else if (playerSelection === "Scissor" && computerSelection === "Rock") {
         return "You Lose"
+        computerScore++;
     } else if (playerSelection === "Scissor" && computerSelection === "Paper") {
         return "You Won"
+        playerScore++;
     } else return "Click F5 to refresh the Page and enter a valid game move"
   }
 
 
-const playerSelection = prompt("Choose your Weapon");
+let playerScore = 0;
+let computerScore = 0;
+let playerSelection = prompt("Choose your Weapon!")
 const computerSelection = getComputerChoice();
 
 
 
-console.log(playRound(playerSelection, computerSelection));
+function game(){
+    for (let i = 0; i < 4; i++){
+    playerSelection = prompt("Choose your Weapon!")
+    
+    console.log(playRound(playerSelection, computerSelection));
+    }
+if (playerScore > computerScore){
+    return "you won"
+} else if (playerScore < computerScore){
+    return "you lose"
+} else return "you Tied the"
+}
+
+
+
+console.log(game());
+console.log(playerScore);
+
