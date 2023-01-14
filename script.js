@@ -40,7 +40,11 @@ const computerSelection = getComputerChoice();
 
 function game(){
     for (let i = 0; i < 4; i++){
-    playerSelection = prompt("Choose your Weapon!")
+
+        playerSelection = prompt("Choose your Weapon!")
+    console.log("you chose " + playerSelection);
+
+    console.log("Computer chose " + computerSelection);
     
     console.log(playRound(playerSelection, computerSelection));
     }
