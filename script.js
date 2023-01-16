@@ -10,23 +10,23 @@ function playRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection){
         return "Tie"
     } else if (playerSelection === "Rock" && computerSelection === "Paper") {
+        computerScore = computerScore +1;
         return "You Lose"
-        computerScore++;
     } else if (playerSelection === "Rock" && computerSelection === "Scissor") {
+        playerScore = playerScore +1;
         return "You Won"
-        playerScore++;
     } else if (playerSelection === "Paper" && computerSelection === "Rock"){
+        playerScore = playerScore +1;
         return "You Won"
-        playerScore++;
     } else if (playerSelection === "Paper" && computerSelection === "Scissor") {
+        computerScore = computerScore +1;
         return "You Lose"
-        computerScore++;
     } else if (playerSelection === "Scissor" && computerSelection === "Rock") {
+        computerScore = computerScore +1;
         return "You Lose"
-        computerScore++;
     } else if (playerSelection === "Scissor" && computerSelection === "Paper") {
+        playerScore = playerScore +1;
         return "You Won"
-        playerScore++;
     } else return "Click F5 to refresh the Page and enter a valid game move"
   }
 
@@ -39,24 +39,26 @@ const computerSelection = getComputerChoice();
 
 
 function game(){
-    for (let i = 0; i < 4; i++){
+    for (let i = 0; i < 5; i++){
 
         playerSelection = prompt("Choose your Weapon!")
-    console.log("you chose " + playerSelection);
+    console.log("You chose " + playerSelection);
 
     console.log("Computer chose " + computerSelection);
     
     console.log(playRound(playerSelection, computerSelection));
+
+    console.log(playerScore);
+    console.log(computerScore);
     }
 if (playerScore > computerScore){
-    return "you won"
+    return "You Won the Game! Congrats you're smarter than Javascript."
 } else if (playerScore < computerScore){
-    return "you lose"
-} else return "you Tied the"
+    return "You Lose the Game! Refresh the Page with F5 to try one more time!"
+} else return "You Tied the Game!"
 }
 
 
 
 console.log(game());
-console.log(playerScore);
 
