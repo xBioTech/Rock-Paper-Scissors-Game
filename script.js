@@ -1,4 +1,4 @@
-const getRandomName = ["Rock", "Paper", "Scissor"];
+const getRandomName = ["ROCK", "PAPER", "SCISSOR"];
 
 function getComputerChoice(){
     return getRandomName [Math.floor(Math.random()* getRandomName.length)];
@@ -9,22 +9,22 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection){
         return "Tie"
-    } else if (playerSelection === "Rock" && computerSelection === "Paper") {
+    } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
         computerScore = computerScore +1;
         return "You Lose"
-    } else if (playerSelection === "Rock" && computerSelection === "Scissor") {
+    } else if (playerSelection === "ROCK" && computerSelection === "SCISSOR") {
         playerScore = playerScore +1;
         return "You Won"
-    } else if (playerSelection === "Paper" && computerSelection === "Rock"){
+    } else if (playerSelection === "PAPER" && computerSelection === "ROCK"){
         playerScore = playerScore +1;
         return "You Won"
-    } else if (playerSelection === "Paper" && computerSelection === "Scissor") {
+    } else if (playerSelection === "PAPER" && computerSelection === "SCISSOR") {
         computerScore = computerScore +1;
         return "You Lose"
-    } else if (playerSelection === "Scissor" && computerSelection === "Rock") {
+    } else if (playerSelection === "SCISSOR" && computerSelection === "ROCK") {
         computerScore = computerScore +1;
         return "You Lose"
-    } else if (playerSelection === "Scissor" && computerSelection === "Paper") {
+    } else if (playerSelection === "SCISSOR" && computerSelection === "PAPER") {
         playerScore = playerScore +1;
         return "You Won"
     } else return "Click F5 to refresh the Page and enter a valid game move"
@@ -33,23 +33,23 @@ function playRound(playerSelection, computerSelection){
 
 let playerScore = 0;
 let computerScore = 0;
-let playerSelection = prompt("Choose your Weapon!")
-const computerSelection = getComputerChoice();
+let playerSelection = prompt("Choose your Weapon!").toUpperCase();
+let computerSelection = getComputerChoice();
 
 
 
 function game(){
     for (let i = 0; i < 5; i++){
-
-        playerSelection = prompt("Choose your Weapon!")
+        computerSelection = getComputerChoice();
+        playerSelection = prompt("Choose your Weapon!").toUpperCase();
     console.log("You chose " + playerSelection);
 
     console.log("Computer chose " + computerSelection);
     
     console.log(playRound(playerSelection, computerSelection));
 
-    console.log(playerScore);
-    console.log(computerScore);
+    console.log("Your current Score: " + playerScore);
+    console.log("Computers current Score: " + computerScore);
     }
 if (playerScore > computerScore){
     return "You Won the Game! Congrats you're smarter than Javascript."
