@@ -36,7 +36,11 @@ let computerScore = 0;
 let playerSelection = prompt("Choose your Weapon!").toUpperCase();
 let computerSelection = getComputerChoice();
 
-
+/*
+This function Loops the playRound, displays the Round Scores
+and compares the Game score at the end of the loop to declare
+ the Winner of the Game
+*/
 
 function game(){
     for (let i = 0; i < 5; i++){
