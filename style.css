@@ -17,7 +17,8 @@ body{
 
 .game-section{
     display: flex;
-    
+    justify-content: space-evenly;
+    margin-top: 8em;
 }
 
 .player-info{
@@ -30,6 +31,21 @@ body{
 }
 
 .p-choice{
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    
+}
+
+.computer-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    margin-bottom: 3em;
+}
+
+.c-choice{
     display: flex;
     justify-content: center;
     gap: 3em;
