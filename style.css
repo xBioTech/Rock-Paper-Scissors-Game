@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: lightslategray;
+}
+
+.Headline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.game-section{
+    display: flex;
+    
+}
+
+.player-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    margin-bottom: 3em;
+    color: white;
+}
+
+.p-choice{
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+}
+
