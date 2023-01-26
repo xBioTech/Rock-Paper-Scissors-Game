@@ -24,6 +24,8 @@ body{
     margin-top: 8em;
 }
 
+
+
 .player-info{
     display: flex;
     justify-content: center;
@@ -53,5 +55,14 @@ body{
     display: flex;
     justify-content: center;
     gap: 3em;
+    
 }
 
+.c-choice img:hover{
+    transform: scale(1.2);
+    transition: transform .20s ease;
+}
+.p-choice img:hover {
+    transform: scale(1.2);
+    transition: transform .20s ease;
+}
