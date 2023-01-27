@@ -33,15 +33,27 @@ function playRound(playerSelection, computerSelection){
 
 let playerScore = 0;
 let computerScore = 0;
-let playerSelection = prompt("Choose your Weapon!").toUpperCase();
 let computerSelection = getComputerChoice();
+const playerSelectionScissor = document.querySelector(".btnscissor");
+
+
+const playerSelectionRock = document.querySelector(".btnrock");
+    playerSelectionRock.addEventListener("click", () => {
+    const computerSelection = getComputerChoice();
+    const result = playRound("ROCK", computerSelection);
+    console.log(result);
+});
+
+const playerSelectionPaper = document.querySelector(".btnpaper");
+
+
 
 /*
 This function Loops the playRound, displays the Round Scores
 and compares the Game score at the end of the loop to declare
  the Winner of the Game
 */
-
+/*
 function game(){
     for (let i = 0; i < 5; i++){
         computerSelection = getComputerChoice();
@@ -55,13 +67,15 @@ function game(){
     console.log("Your current Score: " + playerScore);
     console.log("Computers current Score: " + computerScore);
     }
+    
 if (playerScore > computerScore){
     return "You Won the Game! Congrats you're smarter than Javascript."
 } else if (playerScore < computerScore){
     return "You Lose the Game! Refresh the Page with F5 to try one more time!"
 } else return "You Tied the Game!"
 }
-
+console.log(game());
+*/
 
 
 
