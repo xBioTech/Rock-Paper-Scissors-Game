@@ -34,7 +34,7 @@ function playRound(playerSelection, computerSelection){
 let playerScore = 0;
 let computerScore = 0;
 let computerSelection = getComputerChoice();
-const playerSelectionScissor = document.querySelector(".btnscissor");
+
 
 
 const playerSelectionRock = document.querySelector(".btnrock");
@@ -50,6 +50,13 @@ const playerSelectionPaper = document.querySelector(".btnpaper");
         const result = playRound("PAPER", computerSelection);
         console.log(result);
     });
+
+const playerSelectionScissor = document.querySelector(".btnscissor");
+    playerSelectionScissor.addEventListener("click", () => {
+        const computerSelection = getComputerChoice();
+        const result = playRound("SCISSOR", computerSelection);
+        console.log(result);
+    })
 
 
 
