@@ -45,6 +45,11 @@ const playerSelectionRock = document.querySelector(".btnrock");
 });
 
 const playerSelectionPaper = document.querySelector(".btnpaper");
+    playerSelectionPaper.addEventListener("click", () => {
+        const computerSelection = getComputerChoice();
+        const result = playRound("PAPER", computerSelection);
+        console.log(result);
+    });
 
 
 
