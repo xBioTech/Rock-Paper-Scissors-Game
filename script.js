@@ -11,29 +11,39 @@ function playRound(playerSelection, computerSelection){
         return "Tie"
     } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
         computerScore = computerScore +1;
+        cScore.textContent = `${computerScore}`;
         return "You Lose"
     } else if (playerSelection === "ROCK" && computerSelection === "SCISSOR") {
         playerScore = playerScore +1;
+        pScore.textContent = `${playerScore}`;
         return "You Won"
     } else if (playerSelection === "PAPER" && computerSelection === "ROCK"){
         playerScore = playerScore +1;
+        pScore.textContent = `${playerScore}`;
         return "You Won"
     } else if (playerSelection === "PAPER" && computerSelection === "SCISSOR") {
         computerScore = computerScore +1;
+        cScore.textContent = `${computerScore}`;
         return "You Lose"
     } else if (playerSelection === "SCISSOR" && computerSelection === "ROCK") {
         computerScore = computerScore +1;
+        cScore.textContent = `${computerScore}`;
         return "You Lose"
     } else if (playerSelection === "SCISSOR" && computerSelection === "PAPER") {
         playerScore = playerScore +1;
+        pScore.textContent = `${playerScore}`;
         return "You Won"
     } else return "Click F5 to refresh the Page and enter a valid game move"
   }
 
 
+
 let playerScore = 0;
 let computerScore = 0;
 let computerSelection = getComputerChoice();
+
+const pScore = document.querySelector(".player-score");
+const cScore = document.querySelector(".computer-score");
 
 
 
@@ -56,7 +66,12 @@ const playerSelectionScissor = document.querySelector(".btnscissor");
         const computerSelection = getComputerChoice();
         const result = playRound("SCISSOR", computerSelection);
         console.log(result);
-    })
+    });
+
+   
+
+
+
 
 
 
@@ -80,12 +95,7 @@ function game(){
     console.log("Computers current Score: " + computerScore);
     }
     
-if (playerScore > computerScore){
-    return "You Won the Game! Congrats you're smarter than Javascript."
-} else if (playerScore < computerScore){
-    return "You Lose the Game! Refresh the Page with F5 to try one more time!"
-} else return "You Tied the Game!"
-}
+
 console.log(game());
 */
 
