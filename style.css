@@ -66,3 +66,21 @@ body{
     transform: scale(1.2);
     transition: transform .20s ease;
 }
+
+.scoreboard{
+    text-align: center;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 10px 10px 10px 10px;
+    max-width: 40%;
+    font-size: 1.5rem;
+}
+
+.scoreboard-title{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}

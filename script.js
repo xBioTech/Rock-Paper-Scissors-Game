@@ -52,6 +52,7 @@ const playerSelectionRock = document.querySelector(".btnrock");
     const computerSelection = getComputerChoice();
     const result = playRound("ROCK", computerSelection);
     console.log(result);
+    console.log(maxScore());
 });
 
 const playerSelectionPaper = document.querySelector(".btnpaper");
@@ -59,6 +60,7 @@ const playerSelectionPaper = document.querySelector(".btnpaper");
         const computerSelection = getComputerChoice();
         const result = playRound("PAPER", computerSelection);
         console.log(result);
+        console.log(maxScore());
     });
 
 const playerSelectionScissor = document.querySelector(".btnscissor");
@@ -66,9 +68,15 @@ const playerSelectionScissor = document.querySelector(".btnscissor");
         const computerSelection = getComputerChoice();
         const result = playRound("SCISSOR", computerSelection);
         console.log(result);
+        console.log(maxScore());
     });
 
+
    
+  
+   
+// ADD maxSCORE function
+
 
 
 
