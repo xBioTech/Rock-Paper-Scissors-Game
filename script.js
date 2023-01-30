@@ -45,37 +45,56 @@ let computerSelection = getComputerChoice();
 const pScore = document.querySelector(".player-score");
 const cScore = document.querySelector(".computer-score");
 
+function maxScore(){
+    if (playerScore === 5){
+        removeEventListener();
+        return "You Won the Game! You are smarter than JS"
+    } else if (computerScore === 5){
+        removeEventListener();
+        return "You Lose the Game! Press F5 to Refresh and try again"
+    }
+    }
 
 
-const playerSelectionRock = document.querySelector(".btnrock");
-    playerSelectionRock.addEventListener("click", () => {
-    const computerSelection = getComputerChoice();
-    const result = playRound("ROCK", computerSelection);
-    console.log(result);
-    console.log(maxScore());
-});
 
-const playerSelectionPaper = document.querySelector(".btnpaper");
-    playerSelectionPaper.addEventListener("click", () => {
+    const playerSelectionRock = document.querySelector(".btnrock");
+    playerSelectionRock.addEventListener("click", eventHandlerRock);
+
+    function eventHandlerRock(){
+        const computerSelection = getComputerChoice();
+        const result = playRound("ROCK", computerSelection);
+        console.log(result);
+        console.log(maxScore());
+    }
+
+
+    const playerSelectionPaper = document.querySelector(".btnpaper");
+    playerSelectionPaper.addEventListener("click", eventHandlerPaper);
+
+    function eventHandlerPaper(){
         const computerSelection = getComputerChoice();
         const result = playRound("PAPER", computerSelection);
         console.log(result);
         console.log(maxScore());
-    });
+    }
 
-const playerSelectionScissor = document.querySelector(".btnscissor");
-    playerSelectionScissor.addEventListener("click", () => {
+    const playerSelectionScissor = document.querySelector(".btnscissor");
+    playerSelectionScissor.addEventListener("click", eventHandlerScissor);
+
+    function eventHandlerScissor(){
         const computerSelection = getComputerChoice();
         const result = playRound("SCISSOR", computerSelection);
         console.log(result);
         console.log(maxScore());
-    });
+    }
 
 
+    function removeEventListener(){
+        playerSelectionRock.removeEventListener("click", eventHandlerRock);
+        playerSelectionPaper.removeEventListener("click", eventHandlerPaper);
+        playerSelectionScissor.removeEventListener("click", eventHandlerScissor);
+      }
    
-  
-   
-// ADD maxSCORE function
 
 
 
