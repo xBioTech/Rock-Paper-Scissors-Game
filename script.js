@@ -44,15 +44,16 @@ let computerSelection = getComputerChoice();
 
 const pScore = document.querySelector(".player-score");
 const cScore = document.querySelector(".computer-score");
+const scoreboardOutput = document.querySelector(".score-result");
 
 function maxScore(){
     if (playerScore === 5){
         removeEventListener();
-        return "You Won the Game! You are smarter than JS"
+        return "You Won the Game! You are smarter than JS";
     } else if (computerScore === 5){
         removeEventListener();
-        return "You Lose the Game! Press F5 to Refresh and try again"
-    }
+        return "You Lose the Game! Press F5 to Refresh and try again";
+    } 
     }
 
 
@@ -63,8 +64,14 @@ function maxScore(){
     function eventHandlerRock(){
         const computerSelection = getComputerChoice();
         const result = playRound("ROCK", computerSelection);
-        console.log(result);
-        console.log(maxScore());
+
+        if (playerScore === 5 || computerScore === 5){
+            removeEventListener();
+            scoreboardOutput.textContent = maxScore();
+        } else {
+            scoreboardOutput.textContent = result;
+        }
+        
     }
 
 
@@ -74,8 +81,14 @@ function maxScore(){
     function eventHandlerPaper(){
         const computerSelection = getComputerChoice();
         const result = playRound("PAPER", computerSelection);
-        console.log(result);
-        console.log(maxScore());
+
+        if (playerScore === 5 || computerScore === 5){
+            removeEventListener();
+            scoreboardOutput.textContent = maxScore();
+        } else {
+            scoreboardOutput.textContent = result;
+        }
+        
     }
 
     const playerSelectionScissor = document.querySelector(".btnscissor");
@@ -84,8 +97,14 @@ function maxScore(){
     function eventHandlerScissor(){
         const computerSelection = getComputerChoice();
         const result = playRound("SCISSOR", computerSelection);
-        console.log(result);
-        console.log(maxScore());
+
+        if (playerScore === 5 || computerScore === 5){
+            removeEventListener();
+            scoreboardOutput.textContent = maxScore();
+        } else {
+            scoreboardOutput.textContent = result;
+        }
+        
     }
 
 
@@ -94,38 +113,3 @@ function maxScore(){
         playerSelectionPaper.removeEventListener("click", eventHandlerPaper);
         playerSelectionScissor.removeEventListener("click", eventHandlerScissor);
       }
-   
-
-
-
-
-
-
-
-/*
-This function Loops the playRound, displays the Round Scores
-and compares the Game score at the end of the loop to declare
- the Winner of the Game
-*/
-/*
-function game(){
-    for (let i = 0; i < 5; i++){
-        computerSelection = getComputerChoice();
-        playerSelection = prompt("Choose your Weapon!").toUpperCase();
-    console.log("You chose " + playerSelection);
-
-    console.log("Computer chose " + computerSelection);
-    
-    console.log(playRound(playerSelection, computerSelection));
-
-    console.log("Your current Score: " + playerScore);
-    console.log("Computers current Score: " + computerScore);
-    }
-    
-
-console.log(game());
-*/
-
-
-
-
